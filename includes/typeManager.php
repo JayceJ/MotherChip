@@ -2,14 +2,16 @@
 
 //THIS MAY OR MAY NOT BE CORRECT AS A CLASS MANAGER. LOLZ
 
-include_once('db.php');
-include_once('products.php');
+include_once('wrapper.php');
 include_once('type.php');
+include_once('product.php');
 
 
 class Type_Manager{
 
-	public function getAllTypes(){
+	//No attributes
+
+	public function load_all_types(){
 
 		$connection = new Database();
 		$query = "SELECT typeid FROM tbtype";
@@ -35,5 +37,16 @@ class Type_Manager{
 	}//getAllSubjects
 
 }//class
+
+
+
+//TESTING
+// $test = new Type_Manager();
+
+// $all_types = $test->load_one_type(1);
+
+// echo '<pre>';
+// print_r($all_types);
+// echo '</pre>';
 
  ?>

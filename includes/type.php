@@ -1,7 +1,7 @@
 <?php
 
-include_once('db.php');
-include_once('products.php');
+include_once('wrapper.php');
+include_once('product.php');
 
 
 class Type{
@@ -10,7 +10,7 @@ class Type{
 	private $type_name;
 	private $description;
 	private $display_order;
-	private $products_array;
+	private $products;
 
 	public function __construct(){
 
@@ -52,12 +52,38 @@ class Type{
 			
 			$product = new Product();
 			$product->load($row["productid"]);
-			$this->products_array[] = $product; //Add pages objects into the array
+			$this->products[] = $product; //Add pages objects into the array
 
 		}
 
 	
 		$connection->close_connection(); 
+
+	}
+
+	public function __get($property){
+
+		switch($property){
+
+			case 'ID';
+				return $this->type_id;
+				break;
+			case 'typeName';
+				return $this->type_name;
+				break;
+			case 'description';
+				return $this->description;
+				break;
+			case 'display_order';
+				return $this->display_order;
+				break;
+			case 'products';
+				return $this->products;
+				break;
+			default:
+				die("Sorry, <b>". $property . "</b> is not allowed to be read from");
+
+		}
 
 	}
 }

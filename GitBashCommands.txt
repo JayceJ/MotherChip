@@ -1,10 +1,10 @@
 PERSONAL: to get to the group project
 
-	cd ~/xampp/htdocs/"007 Group Project MotherChip"/motherhip
+	cd ~/xampp/htdocs/
 
 	cd "007 Group Project MotherChip"
 
-	cd motherhip
+	cd motherchip
 
 
 
