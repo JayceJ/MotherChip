@@ -1,6 +1,5 @@
 <?php
 
-//THIS MAY OR MAY NOT BE CORRECT AS A CLASS MANAGER. LOLZ
 
 include_once('wrapper.php');
 include_once('type.php');
@@ -14,7 +13,7 @@ class Type_Manager{
 	public function load_all_types(){
 
 		$connection = new Database();
-		$query = "SELECT typeid FROM tbtype";
+		$query = "SELECT typeid FROM tbproducttype";
 
 		$result = $connection->query($query);
 

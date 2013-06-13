@@ -91,11 +91,11 @@ class Type{
 
 /////////////////TESTING////////////////////
 
-$test = new Type();
+// $test = new Type();
 
-$test->load(1);
-echo "<pre>";
-print_r($test);
-echo "</pre>";
+// $test->load(1);
+// echo "<pre>";
+// print_r($test);
+// echo "</pre>";
 
  ?>

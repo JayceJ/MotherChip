@@ -1,61 +1,16 @@
 <?php 
-	require_once("includes/head.php");
- ?>
-		
-		
-		<div id="header">
+include_once('includes/head.php');
+include_once('includes/product.php');
+include_once('includes/product_manager.php');
+include_once('includes/catalog_view.php');
 
-			<img src="" alt="">
+$cv = new Catalog_View();
+$pm = new Product_Manager();
 
-			<div id="userNav">
+$aProducts = $pm->load_all_products();
 
-				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Account</a></li>
-					<li><a href="#">Shopping cart</a></li>
-				</ul>
-
-			</div>
-
-		</div>
-
-		<div id="sidebar">
-
-			<div id="productNav">
-
-				<h2>Departments</h2>
-				
-				<ul>
-					<li><a href="#">Computers</a></li>
-					<ul>
-						<li><a href="#">Shitty Computer</a></li>
-					</ul>
-
-				</ul>
-
-			</div>
-			
-		</div>
-
-		<div id="content">
-
-			<div class="product">
-
-				<h2>Product</h2>
-
-				<!-- product image goes here -->
-				<img src="assets/images/150x100.jpg" alt="">
-
-				<div class="productDescription"><p>this is a description</p></div>
-
-				<!-- for an add to cart button -->
-				<img src="" alt="">
-
-			</div>
-			
-		</div>
+echo $cv->render_all_products($aProducts);
 
 
-<?php 
-	require_once("includes/foot.php");
- ?>
+include_once('includes/foot.php');
+?>

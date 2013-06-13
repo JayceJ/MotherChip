@@ -1,3 +1,13 @@
+<?php 
+
+include('type_manager.php');
+include('menu_view.php');
+
+$tm = new Type_Manager();
+$mv = new Menu_View();
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -33,6 +43,7 @@
 
 				<h2>Departments</h2>
 				
+				 
 				<?php echo $mv->render($tm->load_all_types()); ?>
 
 			</div>
