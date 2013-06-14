@@ -23,7 +23,7 @@ $mv = new Menu_View();
 		
 		<div id="header">
 
-			<img src="" alt="">
+			<img id="logo" src="assets/images/logo.jpg" alt="logo">
 
 			<div id="userNav">
 
@@ -31,6 +31,7 @@ $mv = new Menu_View();
 					<li><a href="index.php">Home</a></li>
 					<li><a href="#">Account</a></li>
 					<li><a href="#">Shopping cart</a></li>
+					<li><a href="register_page.php">Register / Log in</a></li>
 				</ul>
 
 			</div>
