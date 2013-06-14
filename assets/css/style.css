@@ -153,3 +153,35 @@ body{
 .product h2{
 	margin: 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FORM*/
+
+label, input{
+	display: block;
+	float:left;
+
+}
+label{
+	/*display: inline;*/
+	margin-top: 5px;
+	height:24px;
+	width: 155px;
+}
+
+input{
+	/*display: block;*/
+	width: 400px;
+	height: 24px;
+}
