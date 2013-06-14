@@ -24,8 +24,12 @@
 
 							<div class="productDescription"><p>'.$current_product->description.'</p></div>
 
+							<div class="price"><p>$'.$current_product->price.'</p></div>
+
+							<div class="stockLevel"><p>Current stock: '.$current_product->stockLevel.'</p></div>
+
 							<!-- for an add to cart button -->
-							<img src="" alt="">
+							<a href="#"><img src="assets/images/shoppingcart.gif" alt="Shopping cart logo"></a>
 
 						</div>
 					';
@@ -58,8 +62,12 @@
 
 						<div class="productDescription"><p>'.$current_product->description.'</p></div>
 
+						<div class="price"><p>$'.$current_product->price.'</p></div>
+
+						<div class="stockLevel"><p>Current stock: '.$current_product->stockLevel.'</p></div>
+
 						<!-- for an add to cart button -->
-						<img src="" alt="">
+						<a href="#"><img src="assets/images/shoppingcart.gif" alt="Shopping cart logo"></a>
 
 					</div>
 				';
@@ -87,8 +95,12 @@
 
 						<div class="productDescription"><p>'.$product->description.'</p></div>
 
+						<div class="price"><p>$'.$product->price.'</p></div>
+
+						<div class="stockLevel"><p>Current stock: '.$product->stockLevel.'</p></div>
+
 						<!-- for an add to cart button -->
-						<img src="" alt="">
+						<a href="#"><img src="assets/images/shoppingcart.gif" alt="Shopping cart logo"></a>
 
 					</div>
 			

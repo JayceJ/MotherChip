@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 13, 2013 at 02:40 p.m.
+-- Generation Time: Jun 14, 2013 at 12:11 p.m.
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -134,7 +134,7 @@ INSERT INTO `tbproduct` (`ProductID`, `ProductName`, `Description`, `Price`, `Ty
 (16, 'Intel i5-3570', 'High end i5 CPU. Not unlocked', 300, 4, 8, 'i5.jpg', 1),
 (17, 'Intel i5-4670K (Haswell)', 'New Haswell line of CPU. Ulocked. A step up from Ivy Bridge', 380, 4, 7, 'haswell.jpg', 1),
 (18, 'Corsair Hydro H100i', 'Closed loop CPU cooling with dual 120mm radiator', 200, 6, 8, 'h100i.jpg', 1),
-(19, 'Antec big Boy 200', 'Giant 200mm exhaust fan compatible with most cases.', 50, 6, 9, 'antecbb.jpg', 1),
+(19, 'Antec Big Boy 200', 'Giant 200mm exhaust fan compatible with most cases.', 50, 6, 9, 'antecbb.jpg', 1),
 (20, 'Sickleflow 120 (green)', 'Green LEd 120mm fans. Great for intake. ~65CFM', 25, 6, 20, 'sickleflow', 1);
 
 -- --------------------------------------------------------
