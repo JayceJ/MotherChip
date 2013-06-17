@@ -5,69 +5,61 @@
 		
 		private $html;
 		private $data_array;
+		private $errors_array;
 
 		public function __construct(){
-			$this->html = '<form action="" method="post">';
-			$this->data_array = array();
+
+	 		$this->html = '
+	 			<form action="" method="post">
+	 			<fieldset>
+	 		';
 		}
 
-		public function temp_make_form(){
-
-			$form_html = '';
-
-			$form_html .= '<fieldset>';
-
-			$form_html .= '<label for="username">Username:</label>
-			<input type="text" id ="username" name="username" />
-			<br />
-
-			<label for="firstName">First Name:</label>
-			<input type="text" id ="firstName" name="firstName" />
-			<br />
-
-			<label for="lastName">Last name:</label>
-			<input type="text" id ="lastName" name="lastName" />
-			<br />
-
-			<label for="address">Address:</label>
-			<input type="text" id ="address" name="address" />
-			<br />
-
-			<label for="phone">Phone:</label>
-			<input type="text" id ="phone" name="phone" />
-			<br />
-
-			<label for="email">Email:</label>
-			<input type="text" id ="email" name="email" />
-			<br />
-
-			<label for="password">Password:</label>
-			<input type="password" id ="password" name="password" />
-			<br />
-
-			<label for="username">Confirm Password:</label>
-			<input type="password" id ="password" name="password" />
-			<br />
 
 
-			<input name="go" id="go" type="submit" value="Submit" />';
 
-			$form_html .= '</fieldset>';
+		// public function make_submit()
+		// public function check_required()
 
-			$this->html = $form_html;
+		public function make_input($input_id,$input_name){
+
+			$this->html .=  '
+							<label for="'.$input_id.'">'.$input_name.'</label>
+							<input type="text" name="'.$input_id.'" id="'.$input_id.'" >
+							<br />
+							';
+			$this->html .= $form_html;
+		}//make_input
+
+		public function make_password($password_id,$password_name){
+
+			$this->html .=  '
+							<label for="'.$password_id.'">'.$password_name.'</label>
+							<input type="password" name="'.$password_id.'" id="'.$password_id.'" >
+							<br />
+							';
+			$this->html .= $form_html;
+		}//make_input
+
+		public function make_submit($submit_id,$submit_name){
+
+			$this->html .=  '
+							<input type="submit" name="'.$submit_id.'" id="'.$submit_name.'" value="'.$submit_name.'">
+							';
+			$this->html .= $form_html;
+		}//make_submit
 
 
-		}//end temp function
 
 
 		public function __get($property){
 			switch ($property) {
 				case 'html':
-					return $this->html. '</form>';
+					return $this->html. '</fieldset></form>';
 					break; 
 				// FOR ERROR CHECKING
 				// case 'valid':
-				// 	if(count($this->aErrors) == 0){
+				// 	if(count($this->errors) == 0){
 				// 		return true;
 				// 	}else{
 				// 		return false;

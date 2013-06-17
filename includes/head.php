@@ -1,7 +1,7 @@
 <?php 
 
-include('type_manager.php');
-include('menu_view.php');
+include_once('type_manager.php');
+include_once('menu_view.php');
 
 $tm = new Type_Manager();
 $mv = new Menu_View();
@@ -23,7 +23,7 @@ $mv = new Menu_View();
 		
 		<div id="header">
 
-			<img id="logo" src="assets/images/logo.jpg" alt="logo">
+			<a href="index.php"><img id="logo" src="assets/images/logo.jpg" alt="logo"></a>
 
 			<div id="userNav">
 

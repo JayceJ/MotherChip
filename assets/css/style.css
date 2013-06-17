@@ -168,20 +168,24 @@ body{
 
 /*FORM*/
 
-label, input{
+#content label, input{
 	display: block;
 	float:left;
 
 }
-label{
-	/*display: inline;*/
+#content label{
 	margin-top: 5px;
 	height:24px;
 	width: 155px;
 }
 
-input{
-	/*display: block;*/
+#content input{	
 	width: 400px;
 	height: 24px;
 }
+
+#content fieldset{
+	border: none;
+}
+
+
