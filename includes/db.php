@@ -29,7 +29,7 @@ class Database{
         
         
     }
-    
+        
     //Excute query and return the result set
     //This result set is meant to be passed in to the fetch_array method
     public function query($sSQL){

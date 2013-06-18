@@ -19,7 +19,7 @@ class Customer{
 		$this->first_name = '';
 		$this->last_name = '';
 		$this->address = '';
-		$this->telephone = 0;
+		$this->telephone = '';
 		$this->email = '';
 		$this->user_name = '';
 		$this->password = '';
@@ -64,6 +64,69 @@ class Customer{
 
 		$connection->close_connection();
 	}//end save
+
+
+
+
+
+	public function load($id){
+		$connection = new Database();
+
+		$query = '
+				SELECT customerid, firstname, lastname, address, telephone, email, username, password, credit
+				FROM tbcustomer
+				WHERE customerid =' . $id;
+
+		$result = $connection->query($query);
+
+		if(!$result){
+			die($query. 'has failed.    customer.php - load()');
+		}
+
+		$customer_array = $connection->fetch_array($result);
+
+		$this->customer_id = $customer_array['customerid'];
+		$this->first_name = $customer_array['firstname'];
+		$this->last_name = $customer_array['lastname'];
+		$this->address = $customer_array['address'];
+		$this->telephone = $customer_array['telephone'];
+		$this->email = $customer_array['email'];
+		$this->user_name = $customer_array['username'];
+		$this->password = $customer_array['password'];
+		$this->credit = $customer_array['credit'];
+
+		$connection->close_connection();
+	}
+
+
+
+
+
+
+
+
+	public function load_by_username($username){
+		$connection = new Database();
+
+		$query = '
+			SELECT customerID
+			FROM tbcustomer
+			WHERE username ="'.$username.'"';
+
+		$result = $connection->query($query);
+
+		$user_array = $connection->fetch_array($result);
+
+		if ($user_array != false){
+			$this->load($user_array["customerID"]);
+
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+
 
 	public function __get($property){
 
@@ -123,11 +186,14 @@ class Customer{
 			case 'password';
 				$this->password = $value;
 				break;
+			case 'confirmPassword';
+				$this->confirmPassword = $value;
+				break;
 			case 'credit';
 				$this->credit = $value;
 				break;
 			default:
-				die('SET ERROR customer.php: Sorry, <b>'.$property.'</b> is not allowed to be read from');
+				die('SET ERROR customer.php: Sorry, <b>'.$property.'</b> is not allowed to be written to');
 
 		}
 	}//end set

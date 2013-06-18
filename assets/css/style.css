@@ -174,18 +174,41 @@ body{
 
 }
 #content label{
+	clear: both;
 	margin-top: 5px;
 	height:24px;
 	width: 155px;
 }
 
 #content input{	
-	width: 400px;
+	width: 200px;
 	height: 24px;
 }
 
 #content fieldset{
 	border: none;
+}
+
+#content form #submit{
+	/*float: left;*/
+	margin: 0 0 0 155px;
+	clear: both;
+	height: 40px;
+	width: 200px;
+	border: none;
+	margin-top: 20px;
+	background: #1e5799;
+	color: white;
+}
+
+.errorMessage{
+	color: red;
+	font-size: 12px;
+	/*border: 1px red solid;*/
+	margin: 8px 0 0 20px;
+	height: 20px;
+	width: 150px;
+	float: left;
 }
 
 
