@@ -9,6 +9,7 @@ $pm = new Product_Manager();
 
 $aProducts = $pm->load_all_products();
 
+
 echo $cv->render_all_products($aProducts);
 
 

@@ -30,37 +30,53 @@ class Customer{
 
 		$connection = new Database();
 
-		$query = '
-				  INSERT INTO tbcustomer (
-					customerid,
-					firstname,
-					lastname,
-					address,
-					telephone,
-					email,
-					username,
-					password,
-					credit
-				)
-				VALUES (
-					"'.$this->customer_id.'",
-					"'.$this->first_name.'",
-					"'.$this->last_name.'",
-					"'.$this->address.'",
-					"'.$this->telephone.'",
-					"'.$this->email.'",
-					"'.$this->user_name.'",
-					"'.$this->password.'",
-					"'.$this->credit.'"
-				)
+		if($this->customer_id == 0){
 
-				 ';
+			$query = '
+					  INSERT INTO tbcustomer (
+						firstname,
+						lastname,
+						address,
+						telephone,
+						email,
+						username,
+						password,
+						credit
+					)
+					VALUES (
+						"'.$this->first_name.'",
+						"'.$this->last_name.'",
+						"'.$this->address.'",
+						"'.$this->telephone.'",
+						"'.$this->email.'",
+						"'.$this->user_name.'",
+						"'.$this->password.'",
+						"'.$this->credit.'"
+					)
 
-		$result = $connection->query($query);
+					 ';
 
-		if(!result){
-			die($query. 'has failed.    customer.php - save()');
-		}//end if
+			$result = $connection->query($query);
+			$this->customer_id = $connection->get_insert_id();
+
+			if(!result){
+				die($query. 'has failed.    customer.php - save()');
+			}//end !result if
+
+			//end first if
+		}else{
+
+			$update_query = '
+							UPDATE tbcustomer
+							SET FirstName =  '.$this->firstName.',
+							LastName =  '.$this->lastName.',
+							Address =  '.$this->address.',
+							Telephone =  '.$this->telephone.',
+							Email =  '.$this->email.',
+							WHERE  CustomerID =' . $this->customer_id;
+
+			$result = $connection->query($update_query);			
+		}//end first if else		
 
 		$connection->close_connection();
 	}//end save
@@ -132,6 +148,9 @@ class Customer{
 
 		switch($property){
 
+			case 'ID';
+				return $this->customer_id;
+				break;
 			case 'firstName';
 				return $this->first_name;
 				break;
@@ -205,18 +224,18 @@ class Customer{
 
 //---------------TESTING-----------------
 
-// $customer = new Customer();
+$customer = new Customer();
 
-// $customer->firstName = 'Woll';
-// $customer->lastName = 'Smoth';
-// $customer->address = '1 thisisanaddress road';
-// $customer->telephone = 897623459;
-// $customer->email = 'wollsmoth@nomail.com';
-// $customer->userName = 'woll.smoth';
-// $customer->password = 'thisisalsoapassword';
-// $customer->credit = 20;
+$customer->firstName = 'Woll';
+$customer->lastName = 'Smoth';
+$customer->address = '1 thisisanaddress road';
+$customer->telephone = 897623459;
+$customer->email = 'wollsmoth@nomail.com';
+$customer->userName = 'woll.smoth';
+$customer->password = 'thisisalsoapassword';
+$customer->credit = 20;
 
-// $customer->save();
+$customer->save();
 
 
 
