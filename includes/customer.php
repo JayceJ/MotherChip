@@ -68,11 +68,11 @@ class Customer{
 
 			$update_query = '
 							UPDATE tbcustomer
-							SET FirstName =  '.$this->firstName.',
-							LastName =  '.$this->lastName.',
-							Address =  '.$this->address.',
-							Telephone =  '.$this->telephone.',
-							Email =  '.$this->email.',
+							SET FirstName =  "'.$this->firstName.'",
+							LastName =  "'.$this->lastName.'",
+							Address =  "'.$this->address.'",
+							Telephone =  "'.$this->telephone.'",
+							Email =  "'.$this->email.'"
 							WHERE  CustomerID =' . $this->customer_id;
 
 			$result = $connection->query($update_query);			
@@ -224,18 +224,18 @@ class Customer{
 
 //---------------TESTING-----------------
 
-$customer = new Customer();
+// $customer = new Customer();
 
-$customer->firstName = 'Woll';
-$customer->lastName = 'Smoth';
-$customer->address = '1 thisisanaddress road';
-$customer->telephone = 897623459;
-$customer->email = 'wollsmoth@nomail.com';
-$customer->userName = 'woll.smoth';
-$customer->password = 'thisisalsoapassword';
-$customer->credit = 20;
+// $customer->firstName = 'Woll';
+// $customer->lastName = 'Smoth';
+// $customer->address = '1 thisisanaddress road';
+// $customer->telephone = 897623459;
+// $customer->email = 'wollsmoth@nomail.com';
+// $customer->userName = 'woll.smoth';
+// $customer->password = 'thisisalsoapassword';
+// $customer->credit = 20;
 
-$customer->save();
+// $customer->save();
 
 
 

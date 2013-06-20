@@ -37,20 +37,22 @@ $mv = new Menu_View();
 					<?php 
 					if(isset($_SESSION["currentuser"])){
 						echo '<li><a href="account_page.php">Account</a></li>';
+						echo '<li><a href="shopping_cart.php">Shopping cart</a></li>';
 					}else{
 						echo '<li><a href="login_page.php".php">Account</a></li>';
+						echo '<li><a href="login_page.php">Shopping cart</a></li>';
 					}
 
 					 ?>
 					
-					<li><a href="#">Shopping cart</a></li>
+					
 					
 
 					<?php
 
 						if(isset($_SESSION["currentuser"]) == false){
-							echo '<li><a href="register_page.php">Register</a></li>';
 							echo '<li><a href="login_page.php">Log in</a></li>';
+							echo '<li><a href="register_page.php">Register</a></li>';
 						}else{
 
 							$customer = new Customer();
