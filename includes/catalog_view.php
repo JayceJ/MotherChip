@@ -112,6 +112,44 @@
 
 		}// end render product
 
+
+		public function render_cart(){
+
+			$html = '';
+
+			$html .= '<div id="shoppingCart">
+						<table>
+							<tr>
+								<td>Product</td>
+								<td>Quantity</td>
+								<td>Price</td>
+								<td>Total</td>
+
+							</tr>
+
+							<tr>
+								<td>Super Gweefix Card</td>
+								<td>20</td>
+								<td>2000</td>
+								<td>40000</td>
+								<td><a href="#">Remove</a></td>
+							</tr>
+
+							<tr>
+								<td>Antec Eleven Hundred</td>
+								<td>1</td>
+								<td>200</td>
+								<td>200</td>
+								<td><a href="#">Remove</a></td>
+							</tr>
+
+						</table>
+						<a href="#" id="orderButton">Place Order</a>
+					</div>';
+			
+			$html .= '';
+		}
+
 	}//end class
 
  ?>

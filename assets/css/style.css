@@ -264,3 +264,33 @@ body{
 }
 
 
+
+
+
+
+/*TABLE*/
+#content #shoppingCart table{
+	width: 680px;
+	margin: 20px 0 0 20px;
+}
+
+#content #shoppingCart table tr:first-child{
+	color: white;
+	font-weight: bold;
+	background: #1e5799;
+}
+
+#content #shoppingCart table tr a{
+	color: red;
+}
+
+#content #shoppingCart #orderButton{
+	display: inline-block;
+	height: 30px;
+	width: 150px;
+	text-align: center;
+	color: white;
+	background: #1e5799;
+	margin: 20px 0 0 20px;
+	line-height: 30px;
+}
