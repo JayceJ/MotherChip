@@ -47,7 +47,7 @@ if(isset($_POST['submit'])){
 		$customer->save();
 
 		//redirect
-		header('Location: index.php');
+		header('Location: account_page.php');
 	// }
 }
 

@@ -3,6 +3,7 @@
 include_once('type_manager.php');
 include_once('menu_view.php');
 include_once('customer.php');
+include_once('cart.php');
 
 //including all pages in a session to store lobal vars such as username
 session_start();

@@ -1,14 +1,19 @@
 <?php 
 
-include('includes/header.php');
-include_once('includes/catalog_view.php');
+include_once('includes/cart_view.php');
+include_once('includes/head.php');
 
-$cv = new Catalog_View();
+$cart = $_SESSION['cart'];
 
-$cart_html = $cv->render_cart();
+$cv = new Cart_View();
+
+$cart_html = $cv->render_cart($cart);
 
 echo $cart_html;
 
-include_once('includes/footer.php');
+
+
+
+include_once('includes/foot.php');
 
 ?>

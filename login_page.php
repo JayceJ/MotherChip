@@ -1,4 +1,6 @@
 <?php 
+include_once('includes/cart_view.php');
+include_once('includes/cart.php');
 include_once('includes/head.php');
 include_once('includes/form.php');
 include_once('includes/customer.php');
@@ -24,6 +26,12 @@ include_once('includes/customer.php');
 
 				$form->raise_custom_error('password', 'Incorrect password');
 			}else{
+				//storing the Shopping Cart
+				$cart = new Cart();
+				//$cart->add(9,7);
+				//$cart->add(5,1);
+				$_SESSION['cart'] = $cart;
+				//setting the currentuser
 				$_SESSION['currentuser'] = $test_customer->ID;
 				header('Location: index.php');
 				exit;
