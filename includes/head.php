@@ -33,41 +33,29 @@ $mv = new Menu_View();
 			<div id="userNav">
 
 				<ul>
-					<li><a href="index.php">Home</a></li>
-
+					
 					<?php 
-					if(isset($_SESSION["currentuser"])){
+					if(isset($_SESSION["currentuser"])){						
+						echo '<li><a href="index.php">Home</a></li>';
 						echo '<li><a href="account_page.php">Account</a></li>';
-						echo '<li><a href="shopping_cart.php">Shopping cart</a></li>';
+						echo '<li><a href="shopping_cart.php">Shopping cart</a></li>';	
+						$customer = new Customer();
+						$customer->load($_SESSION["currentuser"]);					
+						echo '<li><a href="logout_page.php">Logout</a></li>';
+						echo '<li>Welcome, <b><a href="account_page.php">'.$customer->firstName . ' '. $customer->lastName .'</a></b></li>';
+
 					}else{
+						echo '<li><a href="index.php">Home</a></li>';
 						echo '<li><a href="login_page.php".php">Account</a></li>';
 						echo '<li><a href="login_page.php">Shopping cart</a></li>';
+						echo '<li><a href="login_page.php">Log in</a></li>';
+						echo '<li><a href="register_page.php">Register</a></li>';
 					}
 
 					 ?>
 					
 					
-					
-
-					<?php
-
-						if(isset($_SESSION["currentuser"]) == false){
-							echo '<li><a href="login_page.php">Log in</a></li>';
-							echo '<li><a href="register_page.php">Register</a></li>';
-						}else{
-
-							$customer = new Customer();
-							$customer->load($_SESSION["currentuser"]);
-							echo '<li><a href="logout_page.php">Logout</a></li>';
-							echo '<li>Welcome, <b><a href="account_page.php">'.$customer->firstName . ' '. $customer->lastName .'</a></b></li>';
-							
-						}
-					?>
-					
-					
 				</ul>
-
-
 
 			</div>
 

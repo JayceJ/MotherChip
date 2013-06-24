@@ -56,6 +56,35 @@ class Product{
 
 	}
 
+	public function save(){
+
+		$connection = new Database();
+
+		$query = '
+			INSERT INTO tbproduct (
+				productname, 
+				description, 
+				price, 
+				typeid, 
+				stocklevel, 
+				photopath, 
+				active
+			)
+			VALUES (
+				"'.$this->product_name.'",
+				"'.$this->description.'",
+				"'.$this->price.'",
+				"'.$this->type_id.'",
+				"'.$this->stock_level.'",
+				"'.$this->photo_path.'",
+				"'.$this->active.'"
+			)
+		';
+
+		$result = $connection->query($query);
+
+	}
+
 	public function __get($property){
 
 		switch ($property) {
@@ -95,7 +124,39 @@ class Product{
 				die("Sorry, <b>". $property . "</b> is not allowed to be read from");
 		}
 
-	}
+	}// get
+
+	public function __set($property, $value){
+
+		switch($property){
+
+			case 'productName';
+				$this->product_name = $value;
+				return;
+			case 'description';
+				$this->description = $value;
+				return;
+			case 'price';
+				$this->price = $value;
+				return;
+			case 'typeID';
+				$this->type_id = $value;
+				return;
+			case 'stockLevel';
+				$this->stock_level = $value;
+				return;
+			case 'photoPath';
+				$this->photo_path = $value;
+				return;
+			case 'active';
+				$this->active = $value;
+				return;
+			default:
+				die("Sorry, <b>". $property . "</b> is not allowed to be written to");
+
+		}
+
+	}// set
 
 
 
