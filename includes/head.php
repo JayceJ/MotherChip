@@ -1,5 +1,5 @@
 <?php 
-
+ob_start();
 include_once('type_manager.php');
 include_once('menu_view.php');
 include_once('customer.php');
@@ -42,6 +42,7 @@ $mv = new Menu_View();
 						$customer = new Customer();
 						$customer->load($_SESSION["currentuser"]);					
 						echo '<li><a href="logout_page.php">Logout</a></li>';
+						echo '<li><a href="add_new_product.php">ADD PRODUCT</a></li>';
 						echo '<li>Welcome, <b><a href="account_page.php">'.$customer->firstName . ' '. $customer->lastName .'</a></b></li>';
 
 					}else{

@@ -20,7 +20,7 @@
 							<h2>'.$current_product->productName.'</h2>
 
 							<!-- product image goes here -->
-							<img src="assets/images/'.$current_product->photoPath.'" alt="">
+							<img src="assets/images/'.$current_product->photoPath.'" width="185" height="100" alt="">
 
 							<div class="productDescription"><p>'.$current_product->description.'</p></div>
 
@@ -58,7 +58,7 @@
 						<h2>'.$current_product->productName.'</h2>
 
 						<!-- product image goes here -->
-						<img src="assets/images/'.$current_product->photoPath.'" alt="">
+						<img src="assets/images/'.$current_product->photoPath.'" width="185" height="100" alt="">
 
 						<div class="productDescription"><p>'.$current_product->description.'</p></div>
 
@@ -91,7 +91,7 @@
 						<h2>'.$product->productName.'</h2>
 
 						<!-- product image goes here -->
-						<img src="assets/images/'.$product->photoPath.'" alt="">
+						<img src="assets/images/'.$product->photoPath.'" width="185" height="100" alt="">
 
 						<div class="productDescription"><p>'.$product->description.'</p></div>
 

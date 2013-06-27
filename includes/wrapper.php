@@ -1,8 +1,8 @@
 <?php
 define("HOST", "localhost");
-define("USER_NAME", "root");
-define("PASSWORD", "");
-define("DB_NAME", "motherchip");
+define("USER_NAME", "jaycejor_admin");
+define("PASSWORD", "admin1");
+define("DB_NAME", "jaycejor_motherchip");
 
 //This class represents the database connection to mysql db
 class Database{

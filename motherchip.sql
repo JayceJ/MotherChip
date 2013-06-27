@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 14, 2013 at 12:11 p.m.
+-- Generation Time: Jun 26, 2013 at 01:09 p.m.
 -- Server version: 5.1.41
 -- PHP Version: 5.3.1
 
@@ -30,23 +30,26 @@ CREATE TABLE IF NOT EXISTS `tbcustomer` (
   `FirstName` varchar(50) NOT NULL,
   `LastName` varchar(50) NOT NULL,
   `Address` varchar(100) NOT NULL,
-  `Telephone` int(11) NOT NULL,
+  `Telephone` varchar(20) NOT NULL,
   `Email` varchar(100) NOT NULL,
   `UserName` varchar(50) NOT NULL,
   `Password` varchar(100) NOT NULL,
   `Credit` int(11) NOT NULL,
   PRIMARY KEY (`CustomerID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=77 ;
 
 --
 -- Dumping data for table `tbcustomer`
 --
 
 INSERT INTO `tbcustomer` (`CustomerID`, `FirstName`, `LastName`, `Address`, `Telephone`, `Email`, `UserName`, `Password`, `Credit`) VALUES
-(1, 'Nathaniel', 'Smith', '1 Ilivehereatthis place', 123456789, 'nat@notmyemail.com', 'nathaniel.smith', 'thisismypassword', 10),
-(3, 'Test', 'Ificate', '1 thisismyaddress street', 987654321, 'test@myemail.com', 'Test.Ificate', 'hihihi', 80),
-(4, 'Jayce', 'Jordan', '1 ithinkilivehere road', 980723489, 'jayce.jordan@nomail.com', 'jayce.jordan', 'thisisapassword', 9001),
-(5, 'Enzo', 'Something', '1 thisisenzosroad street', 234534534, 'enzo.something@nomail.com', 'enzo.something', 'thisismypasswordforenzo', 1);
+(1, 'Nathaniel', 'Smith', '1 Ilivehereatthis place', '123456789', 'nat@notmyemail.com', 'nathaniel.smith', 'thisismypassword', 10),
+(3, 'Test', 'Ificate', '1 thisismyaddress street', '987654321', 'test@myemail.com', 'Test.Ificate', 'hihihi', 80),
+(4, 'Jayce', 'Jordan', '123 asdf street', '123456789', 'jayce.jordan@nomail.com', 'jayce.jordan', 'thisisapassword', 9001),
+(5, 'Enzo', 'Something', '1 thisisenzosroad street', '234534534', 'enzo.something@nomail.com', 'enzo.something', 'thisismypasswordforenzo', 1),
+(16, 'q', 'q', 'q', 'q', 'q', 'q', 'q', 0),
+(17, 'Test', 'Person', '123 Street Road', '123456788', 'test@test.com', 'test', 'test', 0),
+(76, 'qwe', 'qwe', 'qwe', 'qwe', 'we', 'qwe', 'qwe', 0);
 
 -- --------------------------------------------------------
 
@@ -129,13 +132,13 @@ INSERT INTO `tbproduct` (`ProductID`, `ProductName`, `Description`, `Price`, `Ty
 (11, 'CoolerMaster Cosmos II', 'Ultimate Ultra Tower case', 700, 3, 2, 'cosmos.jpg', 1),
 (12, 'Storm Scout II', 'CoolerMaster branded. Nice high end case', 200, 3, 2, 'scout.jpg', 1),
 (13, 'ASUS Z77 Sabertooth', 'Great high end motherboard', 360, 2, 4, 'sabertooth.jpg', 1),
-(14, 'Gigabyte Z77X-UD3H', 'Mit to high end motherboard supports 1155 intel CPU''s', 240, 2, 5, 'gigabytez77.jpg', 1),
+(14, 'Gigabyte Z77X-UD3H', 'Mid to high end motherboard supports 1155 intel CPU''s', 240, 2, 5, 'gigabytez77.jpg', 1),
 (15, 'Intel i7-3770K', 'High end i7 CPU. Unlocked', 450, 4, 8, 'i7.jpg', 1),
 (16, 'Intel i5-3570', 'High end i5 CPU. Not unlocked', 300, 4, 8, 'i5.jpg', 1),
 (17, 'Intel i5-4670K (Haswell)', 'New Haswell line of CPU. Ulocked. A step up from Ivy Bridge', 380, 4, 7, 'haswell.jpg', 1),
 (18, 'Corsair Hydro H100i', 'Closed loop CPU cooling with dual 120mm radiator', 200, 6, 8, 'h100i.jpg', 1),
 (19, 'Antec Big Boy 200', 'Giant 200mm exhaust fan compatible with most cases.', 50, 6, 9, 'antecbb.jpg', 1),
-(20, 'Sickleflow 120 (green)', 'Green LEd 120mm fans. Great for intake. ~65CFM', 25, 6, 20, 'sickleflow', 1);
+(20, 'Sickleflow 120 (green)', 'Green LED 120mm fans. Great for intake. ~65CFM', 25, 6, 20, 'sickleflow.jpg', 1);
 
 -- --------------------------------------------------------
 
